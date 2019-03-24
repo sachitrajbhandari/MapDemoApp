@@ -1,0 +1,34 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.calcite-nav-top .calcite-map .leaflet-control-zoom {
+  margin-top: 68px;
+}
+
+.calcite-navbar-search {
+  margin-top: 0;
+  margin-right: 5px;
+  padding: 5px 0;
+}
+
+.calcite-nav-top .panel-body .geocoder-control-suggestions.leaflet-bar {
+  top: 25px;
+  top: auto;
+}
+
+.calcite-maps .esri-truncated-attribution {
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.leaflet-touch .leaflet-bar {
+  border: none;
+}
+
+.calcite-bgcolor-coa{background-color:#007b97!important}
+.calcite-bgcolor-coa-25{background-color:rgba(0,123,151,.25)!important}
+.calcite-bgcolor-coa-50{background-color:rgba(0,123,151,.5)!important}
+.calcite-bgcolor-coa-75{background-color:rgba(0,123,151,.75)!important}
+.calcite-bgcolor-dark-coa{background-color:#00313c!important}
