@@ -12,6 +12,7 @@
       </a>
       <ul class="dropdown-menu calcite-bgcolor-coa">
         <li><a role="menuitem" tabindex="0" href="maps.cfm" aria-haspopup="true"><span class="glyphicon glyphicon-map-marker"></span> Map View</a></li>
+        <li><a role="menuitem" tabindex="0" href="data.cfm" aria-haspopup="true"><span class="glyphicon glyphicon-th-list"></span> Data View</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelInfo" aria-haspopup="true"><span class="glyphicon glyphicon-info-sign"></span> Info</a></li>
         <!--li><a role="menuitem" tabindex="0" id="calciteToggleNavbar" aria-haspopup="true"><span class="glyphicon glyphicon-fullscreen"></span> Full Screen</a></li-->
       </ul>

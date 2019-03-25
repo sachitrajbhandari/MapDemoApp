@@ -121,29 +121,40 @@
           version: '1.1.0',
       });
 
-    
+
+    var owsrootUrl = 'http://127.0.0.1:8888/geoserver/ows';
+
+    var defaultParameters = {
+        service : 'WFS',
+        version : '2.0',
+        request : 'GetFeature',
+        typeName : 'TasLGAs:lga',
+        outputFormat : 'text/javascript',
+        format_options : 'callback:getJson',
+        SrsName : 'EPSG:4326'
+        /*SrsName : 'EPSG:28355'*/
+    };
+
+    var parameters = L.Util.extend(defaultParameters);
+    var URL = owsrootUrl + L.Util.getParamString(parameters);
+    console.log(URL);
 
     var worldTransportation = L.esri.basemapLayer('ImageryTransportation');
 
     var map = L.map('map', {zoomControl: false}).setView([-42, 147], 8),
-      //layer = L.esri.basemapLayer('NationalGeographic').addTo(map),
-      layer = L.esri.tiledMapLayer({url: theListUrl}).addTo(map),
-      //layerLabels = L.esri.basemapLayer('xxxLabels').addTo(map);
       layerLabels = null,
-      worldTransportation = L.esri.basemapLayer('ImageryTransportation'),
-      TasLGAs = L.tileLayer.wms("http://127.0.0.1:8888/geoserver/ows?", {
-          layers: 'TasLGAs:lga',
-          format: 'image/png',
-          transparent: true,
-          version: '1.1.0',
-      }).addTo(map);  
+      layer = theList.addTo(map),
+      worldTransportation = L.esri.basemapLayer('ImageryTransportation').addTo(map)
+    ;  
+
+
 
     function setBasemap(basemap) {
       if (layer) {
         map.removeLayer(layer);
       }
       if (basemap === 'OpenStreetMap') {
-        layer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+        layer = L.tileLayer(OpenStreetMapUrl);
       }
       else if (basemap === 'USGS') {
         layer = L.tileLayer(USGSUrl);
@@ -170,7 +181,8 @@
       if (basemap === 'Imagery'  || basemap === 'theList') {
         worldTransportation.addTo(map);
         TasLGAs.addTo(map);   
-        TasWaterBodies.addTo(map)         
+        TasWaterBodies.addTo(map);   
+        WFSLayer.addTo(map);     
       } else if (map.hasLayer(worldTransportation)) {
         // remove world transportation if Imagery basemap is not selected    
         map.removeLayer(worldTransportation);
@@ -178,19 +190,18 @@
     }
 
     var baseMaps = {
-      "theList": theList,
+      "OpenStreetMap": OpenStreetMap,
       "USGS": USGS,
-      "OpenStreetMap": OpenStreetMap
+      "theList": theList
     };
 
     var overlayMaps = {
-        "TasLGAs": TasLGAs,
-        "TasWaterBodies": TasWaterBodies,
-        "worldTransportation" : worldTransportation
+        "<a target='_blank' href='http://localhost:8888/geoserver/TasLGAs/wms?service=WMS&version=1.1.0&request=GetMap&layers=TasLGAs%3Alga&bbox=224665.609375%2C5141043.0%2C629535.375%2C5664526.0&width=593&height=768&srs=EPSG%3A28355&format=application/openlayers'>TasLGAs - WMS Layer</a>": TasLGAs,
+        "<a target='_blank' href='http://localhost:8888/geoserver/topp/wms?service=WMS&version=1.1.0&request=GetMap&layers=topp%3Atasmania_water_bodies&bbox=145.97161899999998%2C-43.031944%2C147.219696%2C-41.775558&width=762&height=768&srs=EPSG%3A4326&format=application/openlayers'>TasWaterBodies - WMS Layer</a>": TasWaterBodies
     };
-  
 
-    L.control.layers(baseMaps, overlayMaps, {position: 'bottomright'}).addTo(map);   
+
+    layerControl = L.control.layers(baseMaps, overlayMaps, {position: 'bottomright'}).addTo(map);   
     
 
     L.control.zoom({
@@ -216,7 +227,7 @@
   <!-- jQuery --> 
   <!-- ====== -->
 
-    <!--script src="https://esri.github.io/calcite-bootstrap/scripts/vendor.js"></script-->
+  <!--script src="https://esri.github.io/calcite-bootstrap/scripts/vendor.js"></script-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all plugins or individual files as needed -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -225,6 +236,66 @@
 
     $(document).ready(function(){
 
+      // Added LGA Feature layer
+      var WFSLayer = null;
+      var ajax = $.ajax({
+        url : URL,
+        dataType : 'jsonp',
+        jsonpCallback : 'getJson',
+        success : function (response) {
+          console.log(response)
+          WFSLayer = L.geoJSON(response, {
+              style: function (feature) {
+                  return {
+                      /*stroke: false,*/
+                      color: '#000',
+                      weight: 1,
+                      opacity: 1,
+                      fillColor: '#FAFAFA',
+                      fillOpacity: 0.5
+
+
+                  };
+              },
+              onEachFeature: function (feature, layer) {
+                popupOptions = {maxWidth: 200,closeButton: false, offset: L.point(0, -20)};
+                layer.bindPopup('LGA Name: '+feature.properties.name,popupOptions);
+                layer.on('mouseover', function () {
+                  layer.openPopup(); 
+                  this.setStyle({
+                    'fillColor': '#999999'
+                  });
+                });
+
+                layer.on('mouseout', function () {
+                  layer.closePopup();
+                  this.setStyle({
+                    'fillColor': '#FAFAFA',
+                    'fillOpacity': 0.5
+                  });
+                });
+
+                layer.on('click', function () {
+                  window.location = 'data_sel.cfm?id='+feature.properties.lga_id;
+                });
+              },
+            });
+            layerControl.addOverlay(WFSLayer, "TasLGAs - WFS Layer");
+            
+            /*WFSLayer.on('mouseover', function(ev) {
+                window.alert('hover');
+            });*/
+
+            WFSLayer.on('click', function(ev) {
+                // React to the user clicking over something here.
+                //window.alert(ev);
+            });
+
+
+          }
+      });
+
+      
       // Basemap changed
       $("#selectStandardBasemap").on("change", function(e) {
         setBasemap($(this).val());
