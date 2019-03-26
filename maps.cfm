@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Lock viewport to prevent scaling -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Ocean & Atmosphere Interview">
+  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Oceans & Atmosphere Job Interview">
   <meta name="author" content="">
   <link rel="icon" href="">
   <title>Tasmanian Maps :: Demo App</title>
@@ -243,12 +243,12 @@
         dataType : 'jsonp',
         jsonpCallback : 'getJson',
         success : function (response) {
-          console.log(response)
+          //console.log(response)
           WFSLayer = L.geoJSON(response, {
               style: function (feature) {
                   return {
                       /*stroke: false,*/
-                      color: '#000',
+                      color: '#999',
                       weight: 1,
                       opacity: 1,
                       fillColor: '#FAFAFA',
@@ -279,7 +279,7 @@
                   window.location = 'data_sel.cfm?id='+feature.properties.lga_id;
                 });
               },
-            });
+            }).addTo(map);
             layerControl.addOverlay(WFSLayer, "TasLGAs - WFS Layer");
             
             /*WFSLayer.on('mouseover', function(ev) {

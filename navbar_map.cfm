@@ -13,6 +13,7 @@
       <ul class="dropdown-menu calcite-bgcolor-coa">
         <li><a role="menuitem" tabindex="0" href="data.cfm" aria-haspopup="true"><span class="glyphicon glyphicon glyphicon-th-list"></span> Data View</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelBasemaps" aria-haspopup="true"><span class="glyphicon glyphicon-th-large"></span> Basemaps</a></li>
+        <li><a role="button" tabindex="0" target="_metadata" href="http://localhost:8888/geonetwork/srv/eng/catalog.search#/metadata/d12b08a9928ffeeb5d931feb0d2301ba8b86637f" aria-haspopup="true"><span class="glyphicon glyphicon-th"></span> Metadata - GeoNetwork</a></li>
         <li><a class="visible-xs" role="button" data-target="#panelSearch" aria-haspopup="true"><span class="glyphicon glyphicon-search"></span> Search</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelInfo" aria-haspopup="true"><span class="glyphicon glyphicon-info-sign"></span> Info</a></li>
         <li><a role="menuitem" tabindex="0" id="calciteToggleNavbar" aria-haspopup="true"><span class="glyphicon glyphicon-fullscreen"></span> Full Map</a></li>
@@ -22,7 +23,7 @@
     <div class="calcite-title calcite-overflow-hidden">
       <span class="calcite-title-main">DEMO :: Tasmanian Maps</span>
       <span class="calcite-title-divider hidden-xs"></span>
-      <span class="calcite-title-sub hidden-xs">Demo App for Job Interview @ CSIRO Ocean & Atmosphere</span> 
+      <span class="calcite-title-sub hidden-xs">Demo App for Job Interview @ CSIRO Oceans & Atmosphere</span> 
     </div>
     <!-- Nav -->
     <ul class="calcite-nav nav navbar-nav">                    

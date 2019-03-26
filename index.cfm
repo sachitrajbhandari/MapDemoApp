@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Lock viewport to prevent scaling -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Ocean & Atmosphere Interview">
+  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Oceans & Atmosphere JobInterview">
   <meta name="author" content="">
   <link rel="icon" href="">
   <title>Tasmanian Maps :: Demo App</title>

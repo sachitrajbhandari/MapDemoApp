@@ -21,7 +21,7 @@
     <div class="calcite-title calcite-overflow-hidden">
       <span class="calcite-title-main">DEMO :: Tasmanian Maps</span>
       <span class="calcite-title-divider hidden-xs"></span>
-      <span class="calcite-title-sub hidden-xs">Demo App for Job Interview @ CSIRO Ocean & Atmosphere</span> 
+      <span class="calcite-title-sub hidden-xs">Demo App for Job Interview @ CSIRO Oceans & Atmosphere</span> 
     </div>
     <!-- Nav -->
     <ul class="calcite-nav nav navbar-nav">                    

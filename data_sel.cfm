@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Lock viewport to prevent scaling -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Ocean & Atmosphere Interview">
+  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Oceans & Atmosphere Job Interview">
   <meta name="author" content="">
   <link rel="icon" href="">
   <title>Tasmanian Maps :: Demo App</title>
@@ -60,13 +60,13 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="staticShapeArea" class="col-sm-2 col-form-label">Shape Area</label>
+                      <label for="staticShapeArea" class="col-sm-2 col-form-label">Shape Area (sq. m)</label>
                       <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="shape_area" value="#shape_area#">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="staticShapeLen" class="col-sm-2 col-form-label">Shape Length</label>
+                      <label for="staticShapeLen" class="col-sm-2 col-form-label">Shape Length (m)</label>
                       <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="shape_len" value="#shape_len#">
                       </div>
@@ -98,6 +98,14 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
+                  <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                    <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                      <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                      <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                    </div>
+                  </div>
                   <div class="chart-pie pt-4 pb-2">
                     <canvas id="myPieChart" width="501" height="180" class="chartjs-render-monitor" style="display: block; height: 235px; width: 557px;"></canvas>
                   </div>
@@ -138,13 +146,15 @@
       Chart.defaults.global.defaultFontColor = '#858796';
 
       // Pie Chart Example
+      var lga = document.getElementById("name").value;
+      var lga_area = document.getElementById("shape_area").value;
       var ctx = document.getElementById("myPieChart");
       var myPieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ["Selected LGA", "Total"],
+          labels: [lga, "Area of rest of the LGAs"],
           datasets: [{
-            data: [15, 50],
+            data: [lga_area, (69208645493.9138-parseFloat(lga_area))],
             backgroundColor: ['#4e73df', '#36b9cc'],
             hoverBackgroundColor: ['#2e59d9', '#2c9faf'],
             hoverBorderColor: "rgba(234, 236, 244, 1)",

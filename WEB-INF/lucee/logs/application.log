@@ -2701,3 +2701,73 @@ available datasource names are [];lucee.runtime.exp.DatabaseException: datasourc
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 "
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","not found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [sun.misc.Launcher$AppClassLoader@c387f44]"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","not found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [java.net.URLClassLoader@2f2c9b19]"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","not found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [lucee.commons.io.res.util.ResourceClassLoader@43e87cb4]"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","looking for tools.jar"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","couldn't find tools.jar at: C:\lucee\jdk\jre\lib\tools.jar"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","tools.jar used:C:\lucee\jdk\lib\tools.jar"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","loaded VirtualMachine class:com.sun.tools.attach.VirtualMachine"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","try to load agent (path:C:\lucee\tomcat\lucee-server\context\lucee-external-agent.jar)"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","pid:84"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [sun.misc.Launcher$AppClassLoader@c387f44]"
+"INFO","http-nio-8888-exec-2","03/26/2019","10:12:38","Instrumentation","ExternalAgent does contain a Instrumentation instance"
+"INFO","http-nio-8888-exec-6","03/26/2019","10:12:50","OSGi","add bundle:C:\lucee\tomcat\lucee-server\bundles\org.postgresql.jdbc42-9.4.1212.jar"
+"INFO","http-nio-8888-exec-6","03/26/2019","10:12:51","OSGi","start bundle:org.postgresql.jdbc42:9.4.1212"
+"INFO","http-nio-8888-exec-5","03/26/2019","14:25:05","OSGi","add bundle:C:\lucee\tomcat\lucee-server\bundles\org.postgresql.jdbc42-9.4.1212.jar"
+"INFO","http-nio-8888-exec-5","03/26/2019","14:25:06","OSGi","start bundle:org.postgresql.jdbc42:9.4.1212"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","not found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [sun.misc.Launcher$AppClassLoader@c387f44]"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","not found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [java.net.URLClassLoader@2f2c9b19]"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","not found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [lucee.commons.io.res.util.ResourceClassLoader@33520906]"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","looking for tools.jar"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","couldn't find tools.jar at: C:\lucee\jdk\jre\lib\tools.jar"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","tools.jar used:C:\lucee\jdk\lib\tools.jar"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","loaded VirtualMachine class:com.sun.tools.attach.VirtualMachine"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","try to load agent (path:C:\lucee\tomcat\lucee-server\context\lucee-external-agent.jar)"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","pid:4248"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","found [lucee.runtime.instrumentation.ExternalAgent] in ClassLoader [sun.misc.Launcher$AppClassLoader@c387f44]"
+"INFO","http-nio-8888-exec-7","03/26/2019","17:06:30","Instrumentation","ExternalAgent does contain a Instrumentation instance"
+"ERROR","http-nio-8888-exec-6","03/27/2019","05:25:58","",";variable [NAME] doesn't exist;lucee.runtime.exp.ExpressionException: variable [NAME] doesn't exist
+	at lucee.runtime.type.scope.UndefinedImpl.get(UndefinedImpl.java:241)
+	at info_panel_cfm$cf.call(/info_panel.cfm:28)
+	at lucee.runtime.PageContextImpl._doInclude(PageContextImpl.java:933)
+	at lucee.runtime.PageContextImpl._doInclude(PageContextImpl.java:823)
+	at lucee.runtime.PageContextImpl.doInclude(PageContextImpl.java:805)
+	at maps_cfm$cf.call(/maps.cfm:76)
+	at lucee.runtime.PageContextImpl._doInclude(PageContextImpl.java:933)
+	at lucee.runtime.PageContextImpl._doInclude(PageContextImpl.java:823)
+	at lucee.runtime.listener.ClassicAppListener._onRequest(ClassicAppListener.java:66)
+	at lucee.runtime.listener.MixedAppListener.onRequest(MixedAppListener.java:45)
+	at lucee.runtime.PageContextImpl.execute(PageContextImpl.java:2464)
+	at lucee.runtime.PageContextImpl._execute(PageContextImpl.java:2454)
+	at lucee.runtime.PageContextImpl.executeCFML(PageContextImpl.java:2427)
+	at lucee.runtime.engine.Request.exe(Request.java:44)
+	at lucee.runtime.engine.CFMLEngineImpl._service(CFMLEngineImpl.java:1090)
+	at lucee.runtime.engine.CFMLEngineImpl.serviceCFML(CFMLEngineImpl.java:1038)
+	at lucee.loader.engine.CFMLEngineWrapper.serviceCFML(CFMLEngineWrapper.java:102)
+	at lucee.loader.servlet.CFMLServlet.service(CFMLServlet.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at mod_cfml.core.invoke(core.java:152)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"

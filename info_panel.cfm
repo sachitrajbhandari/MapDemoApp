@@ -8,20 +8,19 @@
         </div>
       </div>
       <div id="collapseInfo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInfo">
-        <div class="panel-body">            
-          <p>The main styles used in this app are:</p>
-          Body
-          <li>calcite-nav-top</li>
-          <li>calcite-layout-large-title</li>
+        <div class="panel-body" style="width:100%;height:100%">            
+          <p>The aim of this document is to provide the technical specification of the developed web application - MapDemoApp, specifically developed for demonstration at the job interview in CSIRO Oceans and Atmosphere.</p>
           <br>
-          Nav
-          <li>calcite-bgcolor-dark-coa</li>
-          <li>calcite-text-light</li>
+          Features
+          <li>The main feature of this web application is to visualise Local Government Areas (LGAs) in the map of Tasmania, Australia.</li>
+          <li>Ability to display different types of base maps (e.g. theList, USGS, OpenStreetMap).</li>
+          <li>Ability to display different spatial layers (e.g. LGAs, Water Bodies)</li>
+          <li>Ability to show spatial information in map and tabular form.</li>
+          <li>Ability to connect to GeoServer to extract map and features information using WMS (Web Map Service) and WFS (Web Feature Service) functionalities.</li>
           <br>
-          Panels
-          <li>calcite-panels-left</li>
-          <li>calcite-bgcolor-dark-coa</li>
-          <li>calcite-bg-custom</li>
+          System Architecture
+          <li><img src="assets/img/MapDemoApp.png" height="500px" ></li>
+          <br>
         </div>
       </div>
     </div>
