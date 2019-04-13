@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Lock viewport to prevent scaling -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Oceans & Atmosphere JobInterview">
+  <meta name="description" content="Tasmanian Maps :: Demo App">
   <meta name="author" content="">
   <link rel="icon" href="">
-  <title>Tasmanian Maps :: Demo App</title>
+  <title>Tasmanian Maps :: Map Demo App</title>
 
   <!-- Custom styles for this template-->
   <link href="./assets/sbadmin/css/sb-admin-2.req.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/demo.css">
 
   <!-- Calcite Maps Bootstrap -->
-  <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+  <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-bootstrap-v0.10-modified.css">
 
   <!-- Calcite Maps -->
   <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-esri-leaflet.min-v0.10.css">
@@ -65,7 +65,7 @@
   </style>
 
 </head>
-<body class="calcite-maps calcite-nav-top">
+<body class="calcite-nav-top">
 
   <!-- Navbar -->
 
@@ -75,7 +75,7 @@
 
   <!-- Map Container  -->
 
-  <div class="calcite-map">                
+  <div class="">                
     <div id="map" class="calcite-text-light calcite-bgcolor-coa calcite-title-index">
       <span>
         <div class="container">

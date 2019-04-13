@@ -344,7 +344,7 @@
   color: #3a3b45;
   text-align: inherit;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: white;
   border: 0;
 }
 
@@ -368,6 +368,7 @@
 
 .dropdown-menu.show {
   display: block;
+  background-color: white;
 }
 
 .dropdown-header {

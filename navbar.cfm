@@ -19,9 +19,9 @@
     </div>
     <!-- Title -->
     <div class="calcite-title calcite-overflow-hidden">
-      <span class="calcite-title-main">DEMO :: Tasmanian Maps</span>
+      <span class="calcite-title-main">Tasmanian Maps</span>
       <span class="calcite-title-divider hidden-xs"></span>
-      <span class="calcite-title-sub hidden-xs">Demo App for Job Interview @ CSIRO Oceans & Atmosphere</span> 
+      <span class="calcite-title-sub hidden-xs">Map Demo App</span> 
     </div>
     <!-- Nav -->
     <ul class="calcite-nav nav navbar-nav">                    
@@ -36,7 +36,7 @@
           <img class="img-profile rounded-circle" src="./assets/img/sachit.png">
         </a>
         <!-- Dropdown - User Information -->
-        <div class="dropdown-menu  dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
           <a class="dropdown-item" href="#">
             <i class="glyphicon glyphicon-user"></i>
             Profile

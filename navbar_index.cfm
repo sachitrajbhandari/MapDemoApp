@@ -16,9 +16,9 @@
     </div>
     <!-- Title -->
     <div class="calcite-title calcite-overflow-hidden">
-      <span class="calcite-title-main">DEMO :: Tasmanian Maps</span>
+      <span class="calcite-title-main">Tasmanian Maps</span>
       <span class="calcite-title-divider hidden-xs"></span>
-      <span class="calcite-title-sub hidden-xs">Demo App for Job Interview @ CSIRO Oceans & Atmosphere</span> 
+      <span class="calcite-title-sub hidden-xs">Map Demo App</span> 
     </div>
   </nav>
 

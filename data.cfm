@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Lock viewport to prevent scaling -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Oceans & Atmosphere Job Interview">
+  <meta name="description" content="Tasmanian Maps :: Demo App">
   <meta name="author" content="">
   <link rel="icon" href="">
-  <title>Tasmanian Maps :: Demo App</title>
+  <title>Tasmanian Maps :: Map Demo App</title>
 
   <!-- Custom styles for this template -->
   <link href="./assets/sbadmin/css/sb-admin-2.req.css" rel="stylesheet">
 
   <!-- Calcite Maps Bootstrap -->
-  <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+  <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-bootstrap-v0.10-modified.css">
 
   <!-- Calcite Maps -->
   <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-esri-leaflet.min-v0.10.css">
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="./assets/css/demo.css">
 
 </head>
-<body class="calcite-maps calcite-nav-top">
+<body class=" calcite-nav-top">
 
   <!-- Navbar -->
   <cfinclude template="navbar.cfm" runonce="true">
@@ -31,7 +31,7 @@
 
   <!-- Map Container  -->
 
-  <div class="calcite-map calcite-nav-top">                
+  <div class="calcite-nav-top">                
      <div id="map" class=" panel-body">
       <div>&nbsp;</div>
       <div>&nbsp;</div>
@@ -41,8 +41,8 @@
         </div>
         <div class="card-body">
           <cfoutput>  
-            <cfquery name="myQuery" datasource="localpostgresql"> 
-                SELECT * FROM lga 
+            <cfquery name="myQuery" datasource="awspostgres"> 
+                SELECT * FROM list_local_govt_areas_statewide 
             </cfquery>
             <cfgrid format="html"
                 name="maingrid" 

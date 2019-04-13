@@ -9,7 +9,7 @@
       </div>
       <div id="collapseInfo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInfo">
         <div class="panel-body" style="width:100%;height:100%">            
-          <p>The aim of this document is to provide the technical specification of the developed web application - MapDemoApp, specifically developed for demonstration at the job interview in CSIRO Oceans and Atmosphere.</p>
+          <p>The aim of this document is to provide the technical specification of the developed web application - MapDemoApp, specifically developed for demonstration purpose.</p>
           <br>
           Features
           <li>The main feature of this web application is to visualise Local Government Areas (LGAs) in the map of Tasmania, Australia.</li>

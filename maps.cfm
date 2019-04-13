@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Lock viewport to prevent scaling -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Tasmanian Maps :: Demo app for CSIRO Oceans & Atmosphere Job Interview">
+  <meta name="description" content="Tasmanian Maps :: Demo App">
   <meta name="author" content="">
   <link rel="icon" href="">
-  <title>Tasmanian Maps :: Demo App</title>
+  <title>Tasmanian Maps :: Map Demo App</title>
 
   <!-- Custom styles for this template-->
   <link href="./assets/sbadmin/css/sb-admin-2.req.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/demo.css">
 
   <!-- Calcite Maps Bootstrap -->
-  <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+  <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-bootstrap-v0.10-modified.css">
 
   <!-- Calcite Maps -->
   <link rel="stylesheet" href="./assets/calcite-maps/dist/css/calcite-maps-esri-leaflet.min-v0.10.css">
@@ -107,14 +107,14 @@
     //L.tileLayer(USGS).addTo(map);
     */
 
-    var TasLGAs = L.tileLayer.wms("http://127.0.0.1:8888/geoserver/ows?", {
+    var TasLGAs = L.tileLayer.wms("/geoserver/ows?", {
           layers: 'TasLGAs:lga',
           format: 'image/png',
           transparent: true,
           version: '1.1.0',
       });
 
-    var TasWaterBodies = L.tileLayer.wms("http://127.0.0.1:8888/geoserver/ows?", {
+    var TasWaterBodies = L.tileLayer.wms("/geoserver/ows?", {
           layers: 'topp:tasmania_water_bodies',
           format: 'image/png',
           transparent: true,
@@ -122,7 +122,7 @@
       });
 
 
-    var owsrootUrl = 'http://127.0.0.1:8888/geoserver/ows';
+    var owsrootUrl = '/geoserver/ows';
 
     var defaultParameters = {
         service : 'WFS',
@@ -196,8 +196,8 @@
     };
 
     var overlayMaps = {
-        "<a target='_blank' href='http://localhost:8888/geoserver/TasLGAs/wms?service=WMS&version=1.1.0&request=GetMap&layers=TasLGAs%3Alga&bbox=224665.609375%2C5141043.0%2C629535.375%2C5664526.0&width=593&height=768&srs=EPSG%3A28355&format=application/openlayers'>TasLGAs - WMS Layer</a>": TasLGAs,
-        "<a target='_blank' href='http://localhost:8888/geoserver/topp/wms?service=WMS&version=1.1.0&request=GetMap&layers=topp%3Atasmania_water_bodies&bbox=145.97161899999998%2C-43.031944%2C147.219696%2C-41.775558&width=762&height=768&srs=EPSG%3A4326&format=application/openlayers'>TasWaterBodies - WMS Layer</a>": TasWaterBodies
+        "<a target='_blank' href='/geoserver/TasLGAs/wms?service=WMS&version=1.1.0&request=GetMap&layers=TasLGAs%3Alga&bbox=224665.609375%2C5141043.0%2C629535.375%2C5664526.0&width=593&height=768&srs=EPSG%3A28355&format=application/openlayers'>TasLGAs - WMS Layer</a>": TasLGAs,
+        "<a target='_blank' href='/geoserver/topp/wms?service=WMS&version=1.1.0&request=GetMap&layers=topp%3Atasmania_water_bodies&bbox=145.97161899999998%2C-43.031944%2C147.219696%2C-41.775558&width=762&height=768&srs=EPSG%3A4326&format=application/openlayers'>TasWaterBodies - WMS Layer</a>": TasWaterBodies
     };
 
 
