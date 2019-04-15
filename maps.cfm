@@ -120,6 +120,13 @@
           transparent: true,
           version: '1.1.0',
       });
+	  
+	var TasReserves = L.tileLayer.wms("/geoserver/ows?", {
+          layers: 'TasLGAs:reserves',
+          format: 'image/png',
+          transparent: true,
+          version: '1.1.0',
+      });
 
 
     var owsrootUrl = '/geoserver/ows';
@@ -137,7 +144,24 @@
 
     var parameters = L.Util.extend(defaultParameters);
     var URL = owsrootUrl + L.Util.getParamString(parameters);
-    console.log(URL);
+    //console.log(URL);
+
+    var defaultReserveParameters = {
+        service : 'WFS',
+        version : '2.0',
+        request : 'GetFeature',
+        typeName : 'TasLGAs:reserves',
+        outputFormat : 'text/javascript',
+        format_options : 'callback:getJson',
+        SrsName : 'EPSG:4326'
+        /*SrsName : 'EPSG:28355'*/
+    };
+
+
+
+    var parametersReserve = L.Util.extend(defaultReserveParameters);
+    var reserveURL = owsrootUrl + L.Util.getParamString(parametersReserve);
+    //console.log(URL);
 
     var worldTransportation = L.esri.basemapLayer('ImageryTransportation');
 
@@ -181,7 +205,8 @@
       if (basemap === 'Imagery'  || basemap === 'theList') {
         worldTransportation.addTo(map);
         TasLGAs.addTo(map);   
-        TasWaterBodies.addTo(map);   
+		TasReserves.addTo(map);
+        TasWaterBodies.addTo(map); 
         WFSLayer.addTo(map);     
       } else if (map.hasLayer(worldTransportation)) {
         // remove world transportation if Imagery basemap is not selected    
@@ -197,6 +222,7 @@
 
     var overlayMaps = {
         "<a target='_blank' href='/geoserver/TasLGAs/wms?service=WMS&version=1.1.0&request=GetMap&layers=TasLGAs%3Alga&bbox=224665.609375%2C5141043.0%2C629535.375%2C5664526.0&width=593&height=768&srs=EPSG%3A28355&format=application/openlayers'>TasLGAs - WMS Layer</a>": TasLGAs,
+		"<a target='_blank' href='/geoserver/TasLGAs/wms?service=WMS&version=1.1.0&request=GetMap&layers=TasLGAs%3Areserves&bbox=376260.65625%2C5185939.0%2C610534.0625%2C5600325.0&width=434&height=768&srs=EPSG%3A28355&format=application/openlayers'>TasReserves - WMS Layer</a>": TasReserves,
         "<a target='_blank' href='/geoserver/topp/wms?service=WMS&version=1.1.0&request=GetMap&layers=topp%3Atasmania_water_bodies&bbox=145.97161899999998%2C-43.031944%2C147.219696%2C-41.775558&width=762&height=768&srs=EPSG%3A4326&format=application/openlayers'>TasWaterBodies - WMS Layer</a>": TasWaterBodies
     };
 
@@ -279,7 +305,7 @@
                   window.location = 'data_sel.cfm?id='+feature.properties.lga_id;
                 });
               },
-            }).addTo(map);
+            })/*.addTo(map)*/;
             layerControl.addOverlay(WFSLayer, "TasLGAs - WFS Layer");
             
             /*WFSLayer.on('mouseover', function(ev) {
@@ -287,6 +313,66 @@
             });*/
 
             WFSLayer.on('click', function(ev) {
+                // React to the user clicking over something here.
+                //window.alert(ev);
+            });
+
+
+          }
+      });
+
+
+      // Added LGA Feature layer
+      var WFSReserveLayer = null;
+      var ajaxReserve = $.ajax({
+        url : reserveURL,
+        dataType : 'jsonp',
+        jsonpCallback : 'getJson',
+        success : function (response) {
+          console.log(response)
+          WFSReserveLayer = L.geoJSON(response, {
+              style: function (feature) {
+                  return {
+                      /*stroke: false,*/
+                      color: '#999',
+                      weight: 1,
+                      opacity: 1,
+                      fillColor: '#00FA00',
+                      fillOpacity: 0
+
+
+                  };
+              },
+              onEachFeature: function (feature, layer) {
+                popupOptions = {maxWidth: 200,closeButton: false, offset: L.point(0, -20)};
+                layer.bindPopup('Reserve Name: '+feature.properties.category+' - '+feature.properties.feat_name,popupOptions);
+                layer.on('mouseover', function () {
+                  layer.openPopup(); 
+                  this.setStyle({
+                    'fillColor': '#00FF00'
+                  });
+                });
+
+                layer.on('mouseout', function () {
+                  layer.closePopup();
+                  this.setStyle({
+                    'fillColor': '#00FA00',
+                    'fillOpacity': 0.5
+                  });
+                });
+
+                layer.on('click', function () {
+                  window.location = 'reserves_sel.cfm?id='+feature.properties.cid;
+                });
+              },
+            })/*.addTo(map)*/;
+            layerControl.addOverlay(WFSReserveLayer, "TasReserves - WFS Layer");
+            
+            /*WFSLayer.on('mouseover', function(ev) {
+                window.alert('hover');
+            });*/
+
+            WFSReserveLayer.on('click', function(ev) {
                 // React to the user clicking over something here.
                 //window.alert(ev);
             });

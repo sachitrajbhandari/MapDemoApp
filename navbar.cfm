@@ -29,6 +29,25 @@
     </ul>
     <!-- Topbar Navbar -->
     <ul class="nav navbar-nav">
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell fa-fw"></i>
+          <!-- Counter - Alerts -->
+          <i class="glyphicon glyphicon-menu-hamburger">&nbsp;</i><span class="badge badge-danger badge-counter">Menu</span>
+        </a>
+        <!-- Dropdown - Alerts -->
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+          <a class="dropdown-item" href="data.cfm">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+            &nbsp;LGAs
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="reserves.cfm">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+            &nbsp;Reserves
+          </a>
+        </div>
+      </li>
       <!-- Nav Item - User Information -->
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,16 +58,16 @@
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
           <a class="dropdown-item" href="#">
             <i class="glyphicon glyphicon-user"></i>
-            Profile
+            &nbsp;Profile
           </a>
           <a class="dropdown-item" href="#">
             <i class="glyphicon glyphicon- glyphicon-cog"></i>
-            Settings
+            &nbsp;Settings
           </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
             <i class="glyphicon glyphicon-log-out"></i>
-            Logout
+            &nbsp;Logout
           </a>
         </div>
       </li>

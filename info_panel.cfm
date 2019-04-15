@@ -12,9 +12,9 @@
           <p>The aim of this document is to provide the technical specification of the developed web application - MapDemoApp, specifically developed for demonstration purpose.</p>
           <br>
           Features
-          <li>The main feature of this web application is to visualise Local Government Areas (LGAs) in the map of Tasmania, Australia.</li>
+          <li>The main feature of this web application is to visualise Local Government Areas (LGAs) information in the map of Tasmania, Australia.</li>
           <li>Ability to display different types of base maps (e.g. theList, USGS, OpenStreetMap).</li>
-          <li>Ability to display different spatial layers (e.g. LGAs, Water Bodies)</li>
+          <li>Ability to display different spatial layers (e.g. LGAs, Reserves, Water Bodies)</li>
           <li>Ability to show spatial information in map and tabular form.</li>
           <li>Ability to connect to GeoServer to extract map and features information using WMS (Web Map Service) and WFS (Web Feature Service) functionalities.</li>
           <br>
