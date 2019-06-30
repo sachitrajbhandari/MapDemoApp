@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <project name="MapDemoApp" default="war">
      
-    <target name="war" depends="compile">
+    <target name="war">
         <war destfile="./MapDemoApp.war" webxml="MapDemoApp/WEB-INF/web.xml">
             <fileset dir="MapDemoApp"/>
             <lib dir="MapDemoApp/WEB-INF/lib"/>
