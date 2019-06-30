@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<project name="MapDemoApp" default="war">
+ 
+    <path id="compile.classpath">
+        <fileset dir="MapDemoApp/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+     
+    <target name="init">
+        <mkdir dir="build/classes"/>
+    </target>
+     
+    <target name="compile" depends="init" >
+        <javac destdir="build/classes" debug="true" srcdir="src">
+            <classpath refid="compile.classpath"/>
+        </javac>
+    </target>
+     
+    <target name="war" depends="compile">
+        <war destfile="./MapDemoApp.war" webxml="MapDemoApp/WEB-INF/web.xml">
+            <fileset dir="WebContent"/>
+            <lib dir="MapDemoApp/WEB-INF/lib"/>
+            <classes dir="build/classes"/>
+        </war>
+    </target>
+     
+    <target name="clean">
+        <delete dir="build" />
+    </target>
+     
+</project>
