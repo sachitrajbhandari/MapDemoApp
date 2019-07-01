@@ -11,7 +11,7 @@ Features
 
 System Architecture
 
-<img src="assets/img/MapDemoApp.png" height="500px" >
+<img src="MapDemoApp/assets/img/MapDemoApp.png" height="500px" >
 
 Quick technical document
 * Please visit this <a target="_blank" href="https://github.com/sachitrajbhandari/MapDemoApp/raw/master/docs/quick_technical_guide.pdf">link</a> for quick technical document
