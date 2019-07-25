@@ -1,6 +1,6 @@
 # MapDemoApp #
 
-The aim of this document is to provide the technical specification of the developed web application - MapDemoApp, specifically developed for demonstration purpose.
+The aim of this document is to provide the technical specification of the developed web application - MapDemoApp, solely developed for demonstration purpose.
 
 Features
 * The main feature of this web application is to visualise Local Government Areas (LGAs) in the map of Tasmania, Australia.
