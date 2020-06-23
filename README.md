@@ -9,9 +9,9 @@ Features
 * Ability to show spatial information in map and tabular form.
 * Ability to connect to GeoServer to extract map and features information using WMS (Web Map Service) and WFS (Web Feature Service) functionalities.
 
-*System Architecture*
+System Architecture
 
 <img src="MapDemoApp/assets/img/MapDemoApp.png" height="500px" >
 
-*Quick technical document*
+Quick technical document
 * Please visit this <a target="_blank" href="https://github.com/sachitrajbhandari/MapDemoApp/raw/master/docs/quick_technical_guide.pdf">link</a> for quick technical document
