@@ -104,7 +104,7 @@
                 </form>
                 <hr>
                 <div class="text-center">
-                  <a class="small" href="f#">Forgot Password?</a>
+                  <a class="small" href="f#">Forgot Password1</a>
                 </div>
                 <div class="text-center">
                   <a class="small" href="#">Create an Account</a>
