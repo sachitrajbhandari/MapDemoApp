@@ -8,6 +8,7 @@ Features
 * Ability to display different spatial layers (e.g. LGAs, Water Bodies)
 * Ability to show spatial information in map and tabular form.
 * Ability to connect to GeoServer to extract map and features information using WMS (Web Map Service) and WFS (Web Feature Service) functionalities.
+* Add feature
 
 System Architecture
 <img src="MapDemoApp/assets/img/MapDemoApp.png" height="500px" >
