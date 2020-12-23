@@ -10,6 +10,7 @@ Features
 * Ability to connect to GeoServer to extract map and features information using WMS (Web Map Service) and WFS (Web Feature Service) functionalities.
 
 **System Architecture**
+<br>
 <img src="MapDemoApp/assets/img/MapDemoApp.png" height="500px" >
 
 **Quick technical document**
